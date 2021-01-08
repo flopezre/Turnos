@@ -1,0 +1,33 @@
+@* Agremamos la referencia al modelo especialidad IEnumerable(Iterable) *@
+@model IEnumerable<Turnos.Models.Especialidad> 
+
+<p>
+    <a asp-action="Create">Nuevo</a>
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.descripcion)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* Aqui colocaremos mas adelante el codigo para mostrar los
+            registros de la baae de datos 
+        *@
+
+        @* Solo se coloca Model, ya que no es necesario poner Especialidad *@
+        @foreach (var item in Model) 
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.idEspecialidad">Editar</a> 
+                    <a asp-action="Delete" asp-route-id="@item.idEspecialidad">Eliminar</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
