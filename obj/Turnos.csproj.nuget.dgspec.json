@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Turnos\\Turnos.csproj": {}
+    "C:\\Turnos\\Turnos.csproj": {}
   },
   "projects": {
-    "c:\\Turnos\\Turnos.csproj": {
+    "C:\\Turnos\\Turnos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Turnos\\Turnos.csproj",
+        "projectUniqueName": "C:\\Turnos\\Turnos.csproj",
         "projectName": "Turnos",
-        "projectPath": "c:\\Turnos\\Turnos.csproj",
+        "projectPath": "C:\\Turnos\\Turnos.csproj",
         "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
-        "outputPath": "c:\\Turnos\\obj\\",
+        "outputPath": "C:\\Turnos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config",

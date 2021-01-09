@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l5wP/+07YAzs0ToaJdGzniM12yAXwqEPKGM6Jb0BefT1t9Ed9NO+FpRX3rosTT/5cSXN+gjKMrG530bBFemkyQ==",
+  "dgSpecHash": "4rfUP0sxbH542ZmYTb05cgULplN3HWHNx7R0vnpHEDE2Y7El2XE5K7BLAcCi/N+3dEJZ7pD44t6IMI/F/V412w==",
   "success": true,
-  "projectFilePath": "c:\\Turnos\\Turnos.csproj",
+  "projectFilePath": "C:\\Turnos\\Turnos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabia\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\fabia\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
