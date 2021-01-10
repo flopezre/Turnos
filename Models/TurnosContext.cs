@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Turnos.Models;
 
 namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
 {
@@ -57,5 +58,7 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
                     .IsUnicode(false);
             });
         }
+
+        public DbSet<Turnos.Models.Medico> Medico { get; set; }
     }
 }

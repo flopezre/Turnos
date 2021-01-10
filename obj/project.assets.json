@@ -390,7 +390,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "3.1.1"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
+          "lib/netstandard2.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -8203,11 +8203,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Turnos\\Turnos.csproj",
+      "projectUniqueName": "C:\\Turnos\\Turnos.csproj",
       "projectName": "Turnos",
-      "projectPath": "c:\\Turnos\\Turnos.csproj",
+      "projectPath": "C:\\Turnos\\Turnos.csproj",
       "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
-      "outputPath": "c:\\Turnos\\obj\\",
+      "outputPath": "C:\\Turnos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8241,6 +8241,8 @@
             "version": "[3.1.1, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[3.1.1, )"
           },
