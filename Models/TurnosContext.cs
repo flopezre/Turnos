@@ -15,6 +15,8 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
 
         public DbSet<Paciente> Paciente { get; set; }
 
+        public DbSet<Medico> Medico { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Especialidad>(entidad => {
@@ -59,6 +61,5 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
             });
         }
 
-        public DbSet<Turnos.Models.Medico> Medico { get; set; }
     }
 }
