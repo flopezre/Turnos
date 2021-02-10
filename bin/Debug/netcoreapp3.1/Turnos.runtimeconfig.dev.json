@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\fabia\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\fabia\\.nuget\\packages"
+      "C:\\Users\\fabia\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }
