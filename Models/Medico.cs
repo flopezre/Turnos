@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Turnos.Models
@@ -20,5 +21,9 @@ namespace Turnos.Models
 
         public DateTime HorarioAtencionDesde { get; set; }
         public DateTime HorarioAtencionHasta { get; set; }
+
+        // ESto es para mostrar una lista de especialidades al medico
+        public List<MedicoEspecialidad> MedicoEspecialidad { get; set; }
+
     }
 }
