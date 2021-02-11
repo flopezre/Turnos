@@ -4,7 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Turnos</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!--Google Icon Materialize version web-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS version web -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize CSS version local-->
+    <link type="text/css" rel="stylesheet" href="~/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -52,8 +57,11 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Materialize JavaScript version web  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Materialize JavaScript version local-->
+      <script type="text/javascript" src="~/libjs/materialize.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
