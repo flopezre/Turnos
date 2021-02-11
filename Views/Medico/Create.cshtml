@@ -1,6 +1,5 @@
 @model Turnos.Models.Medico
 
-
 <!DOCTYPE html>
 
 <html>
@@ -50,6 +49,11 @@
                 <label asp-for="HorarioAtencionHasta" class="control-label"></label>
                 <input asp-for="HorarioAtencionHasta" class="form-control" />
                 <span asp-validation-for="HorarioAtencionHasta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"></label>
+                <!-- Utilizampos el objeto ViewBag para acceder al objeto ViewData-->
+                <select name="idEspecialidad" class="form-control" asp-items="ViewBag.ListaEspecialidades"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

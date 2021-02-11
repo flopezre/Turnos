@@ -33,7 +33,9 @@ namespace Turnos.Controllers
             }
 
             var medico = await _context.Medico
-                .FirstOrDefaultAsync(m => m.IdMedico == id);
+                .Where(m => m.IdMedico == id).Include(me => me.MedicoEspecialidad)
+                .ThenInclude(e => e.Especialidad).FirstOrDefaultAsync();
+
             if (medico == null)
             {
                 return NotFound();
@@ -45,6 +47,8 @@ namespace Turnos.Controllers
         // GET: Medico/Create
         public IActionResult Create()
         {
+            // Un diccionario de datos, contiene todos las especialidades
+            ViewData["ListaEspecialidades"] = new SelectList(_context.Especialidad, "idEspecialidad", "descripcion");
             return View();
         }
 
@@ -53,12 +57,21 @@ namespace Turnos.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico)
+        public async Task<IActionResult> Create([Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int idEspecialidad)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(medico);
                 await _context.SaveChangesAsync();
+
+                var medicoEspecialidad = new MedicoEspecialidad();
+                medicoEspecialidad.idMedico = medico.IdMedico;
+                medicoEspecialidad.idEspecialidad = idEspecialidad;
+
+                _context.Add(medicoEspecialidad);
+                await _context.SaveChangesAsync();
+
+
                 return RedirectToAction(nameof(Index));
             }
             return View(medico);
@@ -72,11 +85,19 @@ namespace Turnos.Controllers
                 return NotFound();
             }
 
-            var medico = await _context.Medico.FindAsync(id);
+            // Es similar a un select con where y un inner join
+            var medico = await _context.Medico.Where(m => m.IdMedico == id)
+            .Include(me => me.MedicoEspecialidad).FirstOrDefaultAsync();
+
             if (medico == null)
             {
                 return NotFound();
             }
+
+            ViewData["ListaEspecialidades"] = new SelectList(
+                _context.Especialidad, "idEspecialidad", "descripcion", medico.MedicoEspecialidad[0].idEspecialidad
+            );
+
             return View(medico);
         }
 
@@ -85,7 +106,7 @@ namespace Turnos.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int idEspecialidad)
         {
             if (id != medico.IdMedico)
             {
@@ -97,6 +118,18 @@ namespace Turnos.Controllers
                 try
                 {
                     _context.Update(medico);
+                    await _context.SaveChangesAsync();
+
+                    var medicoEspecialidad = await _context.MedicoEspecialidad
+                    .FirstOrDefaultAsync(me => me.idMedico == id);
+
+                    // Elimina el registro
+                    _context.Remove(medicoEspecialidad);
+                    await _context.SaveChangesAsync();
+
+                    medicoEspecialidad.idEspecialidad = idEspecialidad;
+
+                    _context.Add(medicoEspecialidad);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -138,9 +171,18 @@ namespace Turnos.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var medicoEspecialidad = await _context.MedicoEspecialidad
+            .FirstOrDefaultAsync(me => me.idMedico == id);
+
+            _context.MedicoEspecialidad.Remove(medicoEspecialidad);
+            await _context.SaveChangesAsync();
+            
             var medico = await _context.Medico.FindAsync(id);
             _context.Medico.Remove(medico);
             await _context.SaveChangesAsync();
+
+
+
             return RedirectToAction(nameof(Index));
         }
 
