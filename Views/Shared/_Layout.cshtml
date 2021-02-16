@@ -45,7 +45,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Turnos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Turnos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -55,10 +55,17 @@
     <!--Materialize JavaScript version local-->
       <script type="text/javascript" src="~/libjs/materialize.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    <!-- script para desplegar el menu en dispositivos moviles-->
+    <!-- script para desplegar el menu en dispositivos moviles -->
     <script>
         $(document).ready(function() {
+            // script para desplegar el menu en dispositivos moviles 
             $('.sidenav').sidenav();
+            // script para desplegar un reloj para seleccionar la hora 
+            $('.timepicker').timepicker();
+            // script para desplegar las opciones del select
+            $(document).ready(function(){
+                $('select').formSelect();
+            ª});
         })
     </script>
 </body>

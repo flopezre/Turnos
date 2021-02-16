@@ -23,7 +23,7 @@ namespace Turnos.Controllers
         {
             return View(await _context.Medico.ToListAsync());
         }
-
+        
         // GET: Medico/Details/5
         public async Task<IActionResult> Details(int? id)
         {

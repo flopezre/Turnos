@@ -9,7 +9,7 @@
 </head>
 <body>
 <p>
-    <a asp-action="Create" class="waves-effect waves-light btn-small">Crear Nuevo</a>
+    <a asp-action="Create" class="waves-effect waves-light btn-small" title="Agregar un Medico">Agregar Medico</a>
 </p>
 <table class="responsive-table highlight z-depth-3 blue lighten-5">
     <thead class="blue darken-1 white-text">
@@ -63,9 +63,9 @@
                 @Html.DisplayFor(modelItem => item.HorarioAtencionHasta)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdMedico">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdMedico">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdMedico">Delete</a>
+                <a class="waves-effect waves-light btn-small blue darken-1 valign-wrapper" asp-action="Edit" asp-route-id="@item.IdMedico">Editar</a>
+                <a class="waves-effect waves-light btn-small light-green darken-2 valign-wrapper" asp-action="Details" asp-route-id="@item.IdMedico">Detalles</a>
+                <a class="waves-effect waves-light btn-small red lighten-1" asp-action="Delete" asp-route-id="@item.IdMedico">Eliminar</a>
             </td>
         </tr>
 }
