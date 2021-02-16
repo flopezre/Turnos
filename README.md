@@ -1,7 +1,7 @@
 # Proyecto Sistemas de Turnos (en desarrollo)
 
 **Descripcion**
-
+(en desarrollo)
 
 
 **Aplicaciones y tecnologias usadas:**
