@@ -7,75 +7,53 @@
     <meta name="viewport" content="width=device-width" />
     <title>Eliminar</title>
 </head>
-<body>
 
-<h3>¿Esta seguro de eliminar el médico?</h3>
-<div>
-    <h4>Medico</h4>
-    <hr />
-    <div class="row">
-        <div class="col s12 m6">
-            <div class="card grey lighten-1">
-                <div class="card-content white-text">
-                    <span class="card-title"><h5><b>@Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido)</h5></b></span>
-                    <p></p>
-                </div>
-                <div class="card-content blue-grey darken-1">
-                    <form asp-action="Delete">
-                        <input type="hidden" asp-for="IdMedico" />
-                        <a asp-action="Delete" asp-route-id="@Model.IdMedico"/>Eliminar</a>
-                        <a asp-action="Index">Volver</a>
-                    </form>
+<body>
+    <h4>¿Esta seguro de eliminar el médico?</h4>
+    <div>
+        <h5>Medico</h5>
+        <hr/>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card hoverable grey lighten-1">
+                    <div class="card-content black-text">
+                        <span class="card-title">
+                            <h5><b>@Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido)
+                            </h5></b>
+                        </span>
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model => model.Direccion)
+                            </dt>
+                            <hr/>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model => model.Telefono)
+                            </dt>
+                            <hr/>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)
+                            </dt>
+                            <hr/>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.HorarioAtencionDesde): @Html.DisplayFor(model => model.HorarioAtencionDesde)
+                            </dt>
+                            <hr/>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.HorarioAtencionHasta): @Html.DisplayFor(model => model.HorarioAtencionHasta)
+                            </dt>
+                            <hr/>
+                        </dl>
+                    </div>
+                    <div class="card-action blue-grey darken-1">
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="IdMedico"/>
+                            <input type="submit" value="Eliminar" class="waves-effect waves-light btn-small"/>
+                            <input type="submit" asp-action="Index" value="Volver" class="waves-effect waves-light btn-small"/>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <dl >
-        <dt >
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt >
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-        <dt >
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt >
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-        <dt >
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt >
-            @Html.DisplayNameFor(model => model.HorarioAtencionDesde)
-        </dt>
-        <dd >
-            @Html.DisplayFor(model => model.HorarioAtencionDesde)
-        </dd>
-        <dt >
-            @Html.DisplayNameFor(model => model.HorarioAtencionHasta)
-        </dt>
-        <dd >
-            @Html.DisplayFor(model => model.HorarioAtencionHasta)
-        </dd>
-    </dl>
-    
-    
-</div>
 </body>
 </html>

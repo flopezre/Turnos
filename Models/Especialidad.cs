@@ -8,7 +8,7 @@ namespace Turnos.Models
         [Key]
         public int idEspecialidad { get; set; }
         public string descripcion { get; set; }
-        public List<MedicoEspecialidad> MedicoEspecialidad { get; set; }
+        //public List<MedicoEspecialidad> MedicoEspecialidad { get; set; }
 
     }
 }

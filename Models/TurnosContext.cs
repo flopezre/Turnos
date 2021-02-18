@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Turnos.Models;
 
 namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
 {
@@ -15,7 +14,7 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
 
         public DbSet<Paciente> Paciente { get; set; }
 
-        public DbSet<Medico> Medico { get; set; }
+        public DbSet<Medico> Medico { get; set; } // Agregado por scafolding
 
         public DbSet<MedicoEspecialidad> MedicoEspecialidad { get; set; }
 
@@ -61,7 +60,7 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Medico>( entidad => {
+            modelBuilder.Entity<Medico>(entidad => {
                 entidad.ToTable("Medico");
 
                 entidad.HasKey(m => m.IdMedico);
@@ -102,7 +101,6 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
             });
 
             modelBuilder.Entity<MedicoEspecialidad>().HasKey(x => new {x.idMedico, x.idEspecialidad});
-
 
             // ForeingKey en EF
             modelBuilder.Entity<MedicoEspecialidad>().HasOne(x => x.Medico)
