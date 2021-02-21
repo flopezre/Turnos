@@ -65,8 +65,8 @@ namespace Turnos.Controllers
                 await _context.SaveChangesAsync();
 
                 var medicoEspecialidad = new MedicoEspecialidad();
-                medicoEspecialidad.idMedico = medico.IdMedico;
-                medicoEspecialidad.idEspecialidad = idEspecialidad;
+                medicoEspecialidad.IdMedico = medico.IdMedico;
+                medicoEspecialidad.IdEspecialidad = idEspecialidad;
 
                 _context.Add(medicoEspecialidad);
                 await _context.SaveChangesAsync();
@@ -95,7 +95,7 @@ namespace Turnos.Controllers
             }
 
             ViewData["ListaEspecialidades"] = new SelectList(
-                _context.Especialidad, "idEspecialidad", "descripcion", medico.MedicoEspecialidad[0].idEspecialidad
+                _context.Especialidad, "idEspecialidad", "descripcion", medico.MedicoEspecialidad[0].IdEspecialidad
             );
 
             return View(medico);
@@ -106,7 +106,7 @@ namespace Turnos.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int idEspecialidad)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int IdEspecialidad)
         {
             if (id != medico.IdMedico)
             {
@@ -121,13 +121,13 @@ namespace Turnos.Controllers
                     await _context.SaveChangesAsync();
 
                     var medicoEspecialidad = await _context.MedicoEspecialidad
-                    .FirstOrDefaultAsync(me => me.idMedico == id);
+                    .FirstOrDefaultAsync(me => me.IdMedico == id);
 
                     // Elimina el registro
                     _context.Remove(medicoEspecialidad);
                     await _context.SaveChangesAsync();
 
-                    medicoEspecialidad.idEspecialidad = idEspecialidad;
+                    medicoEspecialidad.IdEspecialidad = IdEspecialidad;
 
                     _context.Add(medicoEspecialidad);
                     await _context.SaveChangesAsync();
@@ -172,7 +172,7 @@ namespace Turnos.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var medicoEspecialidad = await _context.MedicoEspecialidad
-            .FirstOrDefaultAsync(me => me.idMedico == id);
+            .FirstOrDefaultAsync(me => me.IdMedico == id);
 
             _context.MedicoEspecialidad.Remove(medicoEspecialidad);
             await _context.SaveChangesAsync();
@@ -180,8 +180,6 @@ namespace Turnos.Controllers
             var medico = await _context.Medico.FindAsync(id);
             _context.Medico.Remove(medico);
             await _context.SaveChangesAsync();
-
-
 
             return RedirectToAction(nameof(Index));
         }

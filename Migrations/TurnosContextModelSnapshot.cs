@@ -21,7 +21,7 @@ namespace Turnos.Migrations
 
             modelBuilder.Entity("Turnos.Models.Especialidad", b =>
                 {
-                    b.Property<int>("idEspecialidad")
+                    b.Property<int>("IdEspecialidad")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -32,7 +32,7 @@ namespace Turnos.Migrations
                         .HasMaxLength(200)
                         .IsUnicode(false);
 
-                    b.HasKey("idEspecialidad");
+                    b.HasKey("IdEspecialidad");
 
                     b.ToTable("Especialidad");
                 });
@@ -90,15 +90,15 @@ namespace Turnos.Migrations
 
             modelBuilder.Entity("Turnos.Models.MedicoEspecialidad", b =>
                 {
-                    b.Property<int>("idMedico")
+                    b.Property<int>("IdMedico")
                         .HasColumnType("int");
 
-                    b.Property<int>("idEspecialidad")
+                    b.Property<int>("IdEspecialidad")
                         .HasColumnType("int");
 
-                    b.HasKey("idMedico", "idEspecialidad");
+                    b.HasKey("IdMedico", "IdEspecialidad");
 
-                    b.HasIndex("idEspecialidad");
+                    b.HasIndex("IdEspecialidad");
 
                     b.ToTable("MedicoEspecialidad");
                 });
@@ -149,13 +149,13 @@ namespace Turnos.Migrations
                 {
                     b.HasOne("Turnos.Models.Especialidad", "Especialidad")
                         .WithMany("MedicoEspecialidad")
-                        .HasForeignKey("idEspecialidad")
+                        .HasForeignKey("IdEspecialidad")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Turnos.Models.Medico", "Medico")
                         .WithMany("MedicoEspecialidad")
-                        .HasForeignKey("idMedico")
+                        .HasForeignKey("IdMedico")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

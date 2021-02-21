@@ -21,7 +21,7 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Especialidad>(entidad => {
                 entidad.ToTable("Especialidad");
-                entidad.HasKey(e => e.idEspecialidad);
+                entidad.HasKey(e => e.IdEspecialidad);
                 entidad.Property(e => e.descripcion)
                 .IsRequired()
                 .HasMaxLength(200)
@@ -100,16 +100,16 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
                 .IsUnicode(false);
             });
 
-            modelBuilder.Entity<MedicoEspecialidad>().HasKey(x => new {x.idMedico, x.idEspecialidad});
+            modelBuilder.Entity<MedicoEspecialidad>().HasKey(x => new {x.IdMedico, x.IdEspecialidad});
 
             // ForeingKey en EF
             modelBuilder.Entity<MedicoEspecialidad>().HasOne(x => x.Medico)
             .WithMany(p => p.MedicoEspecialidad)
-            .HasForeignKey(p => p.idMedico);
+            .HasForeignKey(p => p.IdMedico);
             
             modelBuilder.Entity<MedicoEspecialidad>().HasOne(x => x.Especialidad)
             .WithMany(p => p.MedicoEspecialidad)
-            .HasForeignKey(p => p.idEspecialidad);
+            .HasForeignKey(p => p.IdEspecialidad);
         }
     }
 }

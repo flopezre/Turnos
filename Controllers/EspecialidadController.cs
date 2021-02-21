@@ -47,9 +47,9 @@ namespace Turnos.Controllers
         [HttpPost] // Indicamos que este metodo va hacer el POST
                     // Esto diferencia al metodo que graba y edita
         /**** Bind permite enlazar los datos en el formulario ****/
-        public async Task<IActionResult> Edit(int id, [Bind("idEspecialidad,descripcion")] Especialidad especialidad) 
+        public async Task<IActionResult> Edit(int id, [Bind("IdEspecialidad,descripcion")] Especialidad especialidad) 
         {
-            if(id != especialidad.idEspecialidad)
+            if(id != especialidad.IdEspecialidad)
             {
                 return NotFound();
             }
@@ -72,7 +72,7 @@ namespace Turnos.Controllers
             }
 
             // Estamos ejecutando el metodo FirstOrDefaulr
-            var especialidad = await _context.Especialidad.FirstOrDefaultAsync(e => e.idEspecialidad == id);
+            var especialidad = await _context.Especialidad.FirstOrDefaultAsync(e => e.IdEspecialidad == id);
             if(especialidad == null) 
             {
                 return NotFound();
@@ -97,7 +97,7 @@ namespace Turnos.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("idEspecialidad", "descripcion")] Especialidad especialidad)
+        public async Task<IActionResult> Create([Bind("IdEspecialidad", "descripcion")] Especialidad especialidad)
         {
             if(ModelState.IsValid) 
             {
