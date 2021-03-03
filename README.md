@@ -1,6 +1,6 @@
 # Proyecto Sistemas de Turnos (en desarrollo)
 
-**Descripcion**
+**Descripción**
 (en desarrollo)
 
 
