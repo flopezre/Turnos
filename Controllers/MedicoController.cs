@@ -48,7 +48,7 @@ namespace Turnos.Controllers
         public IActionResult Create()
         {
             // Un diccionario de datos, contiene todos las especialidades
-            ViewData["ListaEspecialidades"] = new SelectList(_context.Especialidad, "idEspecialidad", "descripcion");
+            ViewData["ListaEspecialidades"] = new SelectList(_context.Especialidad, "IdEspecialidad", "descripcion");
             return View();
         }
 
@@ -95,7 +95,7 @@ namespace Turnos.Controllers
             }
 
             ViewData["ListaEspecialidades"] = new SelectList(
-                _context.Especialidad, "idEspecialidad", "descripcion", medico.MedicoEspecialidad[0].IdEspecialidad
+                _context.Especialidad, "IdEspecialidad", "descripcion", medico.MedicoEspecialidad[0].IdEspecialidad
             );
 
             return View(medico);
