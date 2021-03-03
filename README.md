@@ -4,7 +4,7 @@
 (en desarrollo)
 
 
-**Aplicaciones y tecnologias usadas:**
+**Aplicaciones y tecnologias utilizadas:**
 
 * Visual Studio Code
 * Microsoft SQL Server Management Studio 18
