@@ -1,15 +1,7 @@
 @model IEnumerable<Turnos.Models.Medico>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
 <p>
-    <a asp-action="Create" class="waves-effect waves-light btn-small" title="Agregar un Medico">Agregar Medico</a>
+    <a class="waves-effect waves-light btn-small" title="Agregar un Medico" asp-action="Create">Agregar Medico</a>
 </p>
 <table class="responsive-table highlight z-depth-3 blue lighten-5">
     <thead class="blue darken-1 white-text">
@@ -39,37 +31,35 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HorarioAtencionDesde)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HorarioAtencionHasta)
-            </td>
-            <td>
-                <a class="waves-effect waves-light btn-small blue darken-1" asp-action="Edit" asp-route-id="@item.IdMedico">Editar</a><br/>
-                <a class="waves-effect waves-light btn-small light-green darken-2"asp-action="Details" asp-route-id="@item.IdMedico">Detalles</a>
-                <a class="waves-effect waves-light btn-small red lighten-1" asp-action="Delete" asp-route-id="@item.IdMedico">Eliminar</a>
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorarioAtencionDesde)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorarioAtencionHasta)
+                </td>
+                <td>
+                    <a class="waves-effect waves-light btn-small blue darken-1" title="Editar" asp-action="Edit" asp-route-id="@item.IdMedico">Editar</a><br/>
+                    <a class="waves-effect waves-light btn-small light-green darken-2" title="Detalles" asp-action="Details" asp-route-id="@item.IdMedico">Detalles</a>
+                    <a class="waves-effect waves-light btn-small red lighten-1" asp-action="Delete" title="Eliminar" asp-route-id="@item.IdMedico">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-</body>
-</html>
