@@ -1,49 +1,51 @@
 @model Turnos.Models.Paciente
 
-<h4>Paciente</h4>
-<hr/>
-<div class="row">
-    <div class="col s12 m6">
-        <div class="card hoverable grey lighten-1">
-            <div>
-                <span>
-                    <h5>
-                        <b>@Html.DisplayFor(modelo => modelo.Nombre) @Html.DisplayFor(modelo => modelo.Apellido)</b>
-                    </h5>
-                </span>
-                <dl>
-                    <dt>
-                        @Html.DisplayNameFor(modelo => modelo.Apellido)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(modelo => modelo.Apellido)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(modelo => modelo.Direccion)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(modelo => modelo.Direccion)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(modelo => modelo.Telefono)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(modelo => modelo.Telefono)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(modelo => modelo.Email)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(modelo => modelo.Email)
-                    </dd>
-                </dl>
-            </div>
-            <div class="card-action blue-grey darken-1">
-                <form asp-action="Delete">
-                    <input type="hidden" asp-for="IdPaciente"/>
-                    <a class="waves-effect waves-light btn-small" asp-action="Edit" asp-route-id="@Model.IdPaciente">Editar</a>
-                    <a class="waves-effect waves-light btn-small" asp-action="Index">Volver</a>
-                </form>
+<div>
+    <h4>Paciente</h4>
+    <hr/>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card hoverable grey lighten-1">
+                <div class="card-content black-text">
+                    <span>
+                        <h5>
+                            <b>@Html.DisplayFor(modelo => modelo.Nombre) @Html.DisplayFor(modelo => modelo.Apellido)</b>
+                        </h5>
+                    </span>
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(modelo => modelo.Apellido)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(modelo => modelo.Apellido)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(modelo => modelo.Direccion)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(modelo => modelo.Direccion)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(modelo => modelo.Telefono)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(modelo => modelo.Telefono)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(modelo => modelo.Email)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(modelo => modelo.Email)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-action blue-grey darken-1">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="IdPaciente"/>
+                        <a class="waves-effect waves-light btn-small" asp-action="Edit" asp-route-id="@Model.IdPaciente">Editar</a>
+                        <a class="waves-effect waves-light btn-small" asp-action="Index">Volver</a>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

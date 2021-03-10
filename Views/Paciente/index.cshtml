@@ -1,7 +1,7 @@
 @model IEnumerable<Turnos.Models.Paciente>
 
 <p>
-    <a class="waves-effect waves-light btn-small" title="Agregar Paciente" asp-action="Create">Agregar Paciente</a>
+    <a class="waves-effect waves-light btn-small" title="Agregar un Paciente" asp-action="Create">Agregar Paciente</a>
 </p>
 <table class="responsive-table highlight z-depth-3 blue lighten-5">
     <thead class="blue darken-1 white-text">
@@ -44,9 +44,9 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    <a class="waves-effect waves-light btn-small blue darken-1" asp-action="Edit" asp-route-id="@item.IdPaciente">Editar</a>
-                    <a class="waves-effect waves-light btn-small light-green darken-2" asp-action="Details" asp-route-id="@item.IdPaciente">Detalle</a>
-                    <a class="waves-effect waves-light btn-small red lighten-1" asp-action="Delete" asp-route-id="@item.IdPaciente">Eliminar</a>
+                    <a class="waves-effect waves-light btn-small blue darken-1" title="Editar un Paciente" asp-action="Edit" asp-route-id="@item.IdPaciente">Editar</a>
+                    <a class="waves-effect waves-light btn-small light-green darken-2" title="Ver detalles del paciente" asp-action="Details" asp-route-id="@item.IdPaciente">Detalle</a>
+                    <a class="waves-effect waves-light btn-small red lighten-1" title="Eliminar un Paciente" asp-action="Delete" asp-route-id="@item.IdPaciente">Eliminar</a>
                 </td>
             </tr>
         }

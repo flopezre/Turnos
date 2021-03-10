@@ -1,59 +1,48 @@
 @model Turnos.Models.Medico
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Eliminar</title>
-</head>
-
-<body>
-    <h4>¿Esta seguro de eliminar el médico?</h4>
-    <div>
-        <h5>Medico</h5>
-        <hr/>
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card hoverable grey lighten-1">
-                    <div class="card-content black-text">
-                        <span class="card-title">
-                            <h5><b>@Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido)
-                            </h5></b>
-                        </span>
-                        <dl>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model => model.Direccion)
-                            </dt>
-                            <hr/>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model => model.Telefono)
-                            </dt>
-                            <hr/>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)
-                            </dt>
-                            <hr/>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.HorarioAtencionDesde): @Html.DisplayFor(model => model.HorarioAtencionDesde)
-                            </dt>
-                            <hr/>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.HorarioAtencionHasta): @Html.DisplayFor(model => model.HorarioAtencionHasta)
-                            </dt>
-                            <hr/>
-                        </dl>
-                    </div>
-                    <div class="card-action blue-grey darken-1">
-                        <form asp-action="Delete">
-                            <input type="hidden" asp-for="IdMedico"/>
-                            <input type="submit" value="Eliminar" class="waves-effect waves-light btn-small"/>
-                            <input type="submit" asp-action="Index" value="Volver" class="waves-effect waves-light btn-small"/>
-                        </form>
-                    </div>
+<h4>¿Esta seguro de eliminar el médico?</h4>
+<div>
+    <h5>Médico</h5>
+    <hr/>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card hoverable grey lighten-1">
+                <div class="card-content black-text">
+                    <span class="card-title">
+                        <h5><b>@Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido)
+                        </h5></b>
+                    </span>
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model => model.Direccion)
+                        </dt>
+                        <hr/>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model => model.Telefono)
+                        </dt>
+                        <hr/>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)
+                        </dt>
+                        <hr/>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.HorarioAtencionDesde): @Html.DisplayFor(model => model.HorarioAtencionDesde)
+                        </dt>
+                        <hr/>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.HorarioAtencionHasta): @Html.DisplayFor(model => model.HorarioAtencionHasta)
+                        </dt>
+                        <hr/>
+                    </dl>
+                </div>
+                <div class="card-action blue-grey darken-1">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="IdMedico"/>
+                        <input class="waves-effect waves-light btn-small" type="submit" title="Eliminar" value="Eliminar" />
+                        <input class="waves-effect waves-light btn-small" type="submit" title="Volver" asp-action="Index" value="Volver" />
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+</div>
