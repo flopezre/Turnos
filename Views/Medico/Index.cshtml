@@ -1,7 +1,7 @@
 @model IEnumerable<Turnos.Models.Medico>
 
 <p>
-    <a class="waves-effect waves-light btn-small" title="Agregar un Medico" asp-action="Create">Agregar Medico</a>
+    <a class="waves-effect waves-light btn-small" title="Agregar un Médico" asp-action="Create">Agregar Medico</a>
 </p>
 <table class="responsive-table highlight z-depth-3 blue lighten-5">
     <thead class="blue darken-1 white-text">
@@ -31,7 +31,8 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
+        @foreach (var item in Model) 
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nombre)

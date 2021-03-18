@@ -2,11 +2,10 @@
 @model IEnumerable<Turnos.Models.Especialidad> 
 
 <p>
-    <a class="waves-effect waves-light btn-small" asp-action="Create" title="Agregar nueva Especialidad">Agregar Especialidad</a>
+    <a class="waves-effect waves-light btn-small" title="Agregar nueva Especialidad" asp-action="Create" >Agregar Especialidad</a>
 </p>
-
-<table>
-    <thead>
+<table class="responsive-table highlight z-depth-3 blue lighten-5">
+    <thead class="blue darken-1 white-text">
         <tr>
             <th>@Html.DisplayNameFor(model => model.descripcion)</th>
         </tr>
