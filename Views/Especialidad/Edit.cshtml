@@ -1,20 +1,27 @@
 @model Turnos.Models.Especialidad
 
 <h4>Especialidad</h4>
-<div>
+<hr/>
+<div class="row">
     <form asp-action="Edit">
         <div asp-validation-summary="ModelOnly"></div>
         <input type="hidden" asp-for="IdEspecialidad"/>
-        <div>
-            <label asp-for="descripcion"></label>
-            <input asp-for="descripcion"/>
-            <span asp-validation-for="descripcion"></span>
+        <div class="row">
+
+            <div class="input-field col s12">
+                <label asp-for="descripcion"></label>
+                <input asp-for="descripcion"/>
+                <span asp-validation-for="descripcion"></span>
+            </div>
         </div>
-        <div>
-            <input type="submit" value="Grabar"/>
+        <div class="row">
+
+            <div class="col s6 m6">
+                <button class="waves-effect waves-light btn-small" title="Guardar" type="submit" >Guardar</button>
+            </div>
+            <div class="col s6 m6">
+                <a class="waves-effect waves-light btn-small" title="Volver" asp-action="Index">Volver</a>
+            </div>
         </div>      
     </form>
-</div>
-<div>
-    <a asp-action="Index">Volver</a>
 </div>
