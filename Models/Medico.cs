@@ -41,5 +41,7 @@ namespace Turnos.Models
         // Esto es para mostrar una lista de especialidades al medico
         public List<MedicoEspecialidad> MedicoEspecialidad { get; set; }
 
+        public List<Turno> Turno { get; set; }
+
     }
 }
