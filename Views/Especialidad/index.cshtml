@@ -2,17 +2,22 @@
 @model IEnumerable<Turnos.Models.Especialidad> 
 
 <p>
-    <a class="waves-effect waves-light btn-small" title="Agregar nueva Especialidad" asp-action="Create" >Agregar Especialidad</a>
+    <a class="waves-effect waves-light btn-small" title="Agregar nueva Especialidad" asp-action="Create">Agregar Especialidad</a>
 </p>
 <table class="responsive-table highlight z-depth-3 blue lighten-5">
-    <thead>
+    <thead class="blue darken-1 white-text">
         <tr>
-            <th>@Html.DisplayNameFor(model => model.descripcion)</th>
+            <th style="width: 80px;">@Html.DisplayNameFor(model => model.descripcion)</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @* Aqui colocaremos mas adelante el codigo para mostrar los
-            registros de la baae de datos*@
+            registros de la baae de datos 
+
+            style="width: 10px;"
+        *@
 
         @* Solo se coloca Model, ya que no es necesario poner Especialidad *@
         @foreach (var item in Model) 
@@ -22,8 +27,11 @@
                     @Html.DisplayFor(modelItem => item.descripcion)
                 </td>
                 <td>
-                    <a class="waves-effect waves-light btn-small blue darken-1" title="Editar Especialidad" asp-action="Edit" asp-route-id="@item.IdEspecialidad">Editar</a> 
-                    <a class="waves-effect waves-light btn-small red lighten-1" title="Eliminar Especialidad" asp-action="Delete" asp-route-id="@item.IdEspecialidad">Eliminar</a> 
+                    <th style="width: 80px;">
+                        <a class="waves-effect waves-light btn-small blue darken-1" title="Editar Especialidad" asp-action="Edit" asp-route-id="@item.IdEspecialidad">Editar</a>
+                        <a class="waves-effect waves-light btn-small red lighten-1" title="Eliminar Especialidad" asp-action="Delete" asp-route-id="@item.IdEspecialidad">Eliminar</a> 
+                    </th>
+                    
                 </td>
             </tr>
         }

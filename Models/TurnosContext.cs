@@ -18,7 +18,7 @@ namespace Turnos.Models // Con esto podemos referenciarlos a en otras clases
 
         public DbSet<MedicoEspecialidad> MedicoEspecialidad { get; set; }
 
-        public DbSet<Turno> T { get; set; }
+        public DbSet<Turno> Turno { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Especialidad>(entidad => {

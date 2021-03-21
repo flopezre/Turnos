@@ -14442,6 +14442,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Turnos\\Views\\Turno\\index.cshtml",
+      "TargetPath": "Views\\Turno\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Turnos\\Views\\Especialidad\\index.cshtml",
       "TargetPath": "Views\\Especialidad\\index.cshtml",
       "FileKind": "mvc"
