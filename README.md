@@ -1,4 +1,4 @@
-# Proyecto Sistemas de Turnos (en desarrollo)
+# Proyecto Sistemas de Turnos para Médicos (en desarrollo)
 
 **Descripción**
 
